@@ -9,7 +9,7 @@ class ReciprocalServiceSpec extends Specification {
 
   "ReciprocalService" >> {
     "can be used with some nice combinators" in {
-      service.parse("5").flatMap(service.reciprocal).map(service.stringify) match {
+      service.apply("5") match {
         case Right(result) => result ==== "0.2"
         case _ => ko
       }
