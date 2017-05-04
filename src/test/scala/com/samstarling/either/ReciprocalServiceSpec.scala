@@ -1,8 +1,7 @@
-package com.samstarling
-
-import org.specs2.mutable.Specification
+package com.samstarling.either
 
 import cats.syntax.either._
+import org.specs2.mutable.Specification
 
 class ReciprocalServiceSpec extends Specification {
 

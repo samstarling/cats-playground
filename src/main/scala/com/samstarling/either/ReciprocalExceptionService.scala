@@ -1,4 +1,4 @@
-package com.samstarling
+package com.samstarling.either
 
 import cats.syntax.either._
 
