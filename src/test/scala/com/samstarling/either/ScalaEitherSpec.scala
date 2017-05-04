@@ -4,7 +4,7 @@ import org.specs2.mutable.Specification
 
 class ScalaEitherSpec extends Specification {
 
-  "Either from Scala" >> {
+  "scala.Either" >> {
     "#right" >> {
       "allows mapping over the Right value" in {
         val e: Either[String, Int] = Right(5)

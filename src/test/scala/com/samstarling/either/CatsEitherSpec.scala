@@ -6,10 +6,8 @@ class CatsEitherSpec extends Specification {
 
   import cats.syntax.either._
 
-  "Either from cats" >> {
+  "cats.syntax.either._" >> {
     "#map" >> {
-
-      // It's Right-biased
 
       "maps over the Right value" in {
         val e: Either[String, Int] = Right(5)
