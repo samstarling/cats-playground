@@ -14,8 +14,12 @@ class SquareRootServiceSpec extends Specification {
       }
     }
 
-    "returns a Left with the error, when one occurs" in {
+    "returns a Left with the error, for unparseable strings" in {
       service.apply("foo") must beLeft(NotANumber("foo"))
+    }
+
+    "returns a Left with the error, for negative numbers" in {
+      service.apply("-20") must beLeft(ImaginaryNumber)
     }
   }
 }
