@@ -22,11 +22,19 @@ class FoldingSpec extends Specification {
   }
 
   "Folding" >> {
-    "#concatenate" >> {
+    "#fold" >> {
       "can be written generically to take a monoid" in new Context {
         val folding = new Folding
-        val result = folding.concatenate(words, new StringMonoid)
+        val result = folding.fold(words, new StringMonoid)
         result ==== "Loremipsumdolor"
+      }
+    }
+
+    "#fold" >> {
+      "can be written generically to take a monoid and a mapping function" in new Context {
+        val folding = new Folding
+        val result = folding.foldMap(words, new StringMonoid)(_.toUpperCase)
+        result ==== "LOREMIPSUMDOLOR"
       }
     }
   }
