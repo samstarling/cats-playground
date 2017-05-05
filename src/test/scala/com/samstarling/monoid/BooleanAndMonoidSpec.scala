@@ -6,9 +6,9 @@ class BooleanAndMonoidSpec extends Specification {
 
   val monoid = new BooleanAndMonoid()
 
-  "BooleanAndMonoid" >> {
+  "BooleanOrMonoid" >> {
     "#combine" >> {
-      "has the correct 'and' logic" in {
+      "has the correct 'or' logic" in {
         monoid.combine(true, true) ==== true
         monoid.combine(false, false) ==== false
         monoid.combine(true, false) ==== false
