@@ -18,4 +18,14 @@ class Folding {
 
   // FPIS exercise 10.6 part 2
   def foldRight[A, B](as: List[A])(z: B)(f: (A, B) => B): B = ???
+
+  // FPIS exercise 10.7
+  def foldMapV[A, B](as: IndexedSeq[A], monoid: Monoid[B])(f: A => B): B = {
+    val (firstHalf, lastHalf) = as.splitAt(as.length / 2)
+    as.length match {
+      case 0 => monoid.empty
+      case 1 => f(as(0))
+      case _ => monoid.combine(foldMapV(firstHalf, monoid)(f), foldMapV(lastHalf, monoid)(f))
+    }
+  }
 }
