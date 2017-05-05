@@ -8,7 +8,7 @@ class ReciprocalService {
 
   private def parse(s: String): Either[Exception, Int] =
     if (s.matches("-?[0-9]+")) Either.right(s.toInt)
-    else Either.left(new NumberFormatException(s"${s} is not a valid integer."))
+    else Either.left(new NumberFormatException(s"$s is not a valid integer."))
 
   private def reciprocal(i: Int): Either[Exception, Double] =
     if (i == 0) Either.left(new IllegalArgumentException("Cannot take reciprocal of 0."))

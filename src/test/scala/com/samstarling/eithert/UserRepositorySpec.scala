@@ -9,8 +9,8 @@ import scala.concurrent.duration._
 class UserRepositorySpec extends Specification {
 
   trait Context extends Scope {
-    val repository = new UserRepository
-    implicit val ec = ExecutionContext.global
+    val repository: UserRepository = new UserRepository
+    implicit val ec: ExecutionContext = ExecutionContext.global
   }
 
   "UserRepository" >> {
