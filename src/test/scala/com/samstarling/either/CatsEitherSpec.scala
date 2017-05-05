@@ -8,7 +8,6 @@ class CatsEitherSpec extends Specification {
 
   "cats.syntax.either._" >> {
     "#map" >> {
-
       "maps over the Right value" in {
         val e: Either[String, Int] = Right(5)
         e.map(_ + 1) ==== Right(6)
